@@ -1,0 +1,26 @@
+name: "Create Deployment"
+description: "Creates a GitHub Deployment"
+author: "bisondev"
+
+inputs:
+  token:
+    description: "Github repository token."
+    required: true
+  environment:
+    description: "The name of the environment."
+    required: true
+  initial_status:
+    description: "Initial status for the deployment."
+    default: "pending"
+    required: false
+  target_url:
+    description: "The website URL of the environment deployed."
+    required: false
+
+outputs:
+  deployment_id:
+    description: "The ID of the created deployment"
+
+runs:
+  using: "node12"
+  main: "../dist/create-deployment.js"

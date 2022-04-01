@@ -1,0 +1,22 @@
+name: "Deployment Status"
+description: "Creates a GitHub Deployment status update"
+author: "chrnorm"
+
+
+inputs:
+  token:
+    description: "Github repository token"
+    required: true
+  target_url:
+    description: "The website URL of the environment deployed."
+    required: false
+  deployment_id:
+    description: "The ID of the deployment"
+    required: true
+  state:
+    description: "State for the deployment"
+    required: true
+
+runs:
+  using: "node12"
+  main: "../dist/update-deployment.js"
