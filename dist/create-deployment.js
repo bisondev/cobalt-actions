@@ -1,4 +1,5 @@
 "use strict";
+// Heavily based on https://github.com/chrnorm/deployment-action originally
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -49,6 +50,7 @@ function run() {
                 required_contexts: [],
                 environment,
                 transient_environment: true,
+                auto_merge: false,
             });
             if (deployment.status === 202) {
                 throw new Error('Creating deployment resulted in merge result. Not supported');
