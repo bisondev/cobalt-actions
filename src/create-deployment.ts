@@ -34,6 +34,7 @@ async function run(): Promise<void> {
             required_contexts: [],
             environment,
             transient_environment: true,
+            auto_merge: false,
         });
 
         if (deployment.status === 202) {
